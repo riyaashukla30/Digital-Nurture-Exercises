@@ -1,0 +1,113 @@
+<h2>Student Enrollment Form</h2>
+
+<form #enrollForm="ngForm" (ngSubmit)="onSubmit(enrollForm)">
+
+  <label>Student Name</label><br>
+
+  <input
+    type="text"
+    name="studentName"
+    required
+    minlength="3"
+    [(ngModel)]="student.studentName"
+    #nameCtrl="ngModel">
+
+  <br>
+
+  <span *ngIf="nameCtrl.touched && nameCtrl.errors?.['required']">
+    Name is required
+  </span>
+
+  <span *ngIf="nameCtrl.touched && nameCtrl.errors?.['minlength']">
+    Name must be at least 3 characters
+  </span>
+
+  <br><br>
+
+  <label>Email</label><br>
+
+  <input
+    type="email"
+    name="studentEmail"
+    required
+    email
+    [(ngModel)]="student.studentEmail"
+    #emailCtrl="ngModel">
+
+  <br>
+
+  <span *ngIf="emailCtrl.touched && emailCtrl.errors?.['required']">
+    Email is required
+  </span>
+
+  <span *ngIf="emailCtrl.touched && emailCtrl.errors?.['email']">
+    Invalid Email
+  </span>
+
+  <br><br>
+
+  <label>Course ID</label><br>
+
+  <input
+    type="number"
+    name="courseId"
+    required
+    [(ngModel)]="student.courseId"
+    #courseCtrl="ngModel">
+
+  <br>
+
+  <span *ngIf="courseCtrl.touched && courseCtrl.errors?.['required']">
+    Course ID is required
+  </span>
+
+  <br><br>
+
+  <label>Preferred Semester</label><br>
+
+  <select
+    name="preferredSemester"
+    [(ngModel)]="student.preferredSemester">
+
+    <option value="">Select</option>
+    <option value="Odd">Odd</option>
+    <option value="Even">Even</option>
+
+  </select>
+
+  <br><br>
+
+  <input
+    type="checkbox"
+    name="agreeToTerms"
+    required
+    [(ngModel)]="student.agreeToTerms"
+    #termsCtrl="ngModel">
+
+  I Agree to Terms
+
+  <br>
+
+  <span *ngIf="termsCtrl.touched && termsCtrl.errors?.['required']">
+    Please accept the terms.
+  </span>
+
+  <br><br>
+
+  <button
+    type="submit"
+    [disabled]="enrollForm.invalid">
+    Submit
+  </button>
+
+  <button
+    type="button"
+    (click)="enrollForm.resetForm()">
+    Reset
+  </button>
+
+</form>
+
+<div *ngIf="submitted">
+    Enrollment request submitted successfully!
+</div>
