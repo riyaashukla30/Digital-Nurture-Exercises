@@ -1,0 +1,89 @@
+
+## Run Commands Sequentially
+
+```cmd id="mc1"
+cd Desktop
+cd "06-Week 6"
+cd "Git-HOL"
+
+git status
+
+git branch GitWork
+git checkout GitWork
+
+type nul > hello.xml
+notepad hello.xml
+```
+
+## Paste this in hello.xml (branch)
+
+```
+Hello from GitWork branch
+```
+
+```cmd id="mc2"
+git add .
+git commit -m "Added hello.xml in GitWork branch"
+
+git checkout main
+
+type nul > hello.xml
+notepad hello.xml
+```
+
+## Paste this in hello.xml (main)
+
+```
+Hello from main branch
+```
+
+```cmd id="mc3"
+git add .
+git commit -m "Added hello.xml in main branch"
+
+git log --oneline --graph --decorate --all
+
+git diff main GitWork
+
+git merge GitWork
+```
+
+## Resolve Conflict (open file)
+
+```cmd id="mc4"
+notepad hello.xml
+```
+
+## Replace content with (FINAL)
+
+```
+Hello from main branch
+Hello from GitWork branch
+```
+
+```cmd id="mc5"
+git add hello.xml
+git commit -m "Resolved merge conflict"
+
+type nul > .gitignore
+notepad .gitignore
+```
+
+## Paste in .gitignore
+
+```
+*.orig
+```
+
+```cmd id="mc6"
+git add .gitignore
+git commit -m "Added gitignore"
+
+git branch
+git branch -d GitWork
+
+git log --oneline --graph --decorate
+
+git status
+git push
+```
