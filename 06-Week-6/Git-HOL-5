@@ -1,0 +1,35 @@
+# Clean Up and Push to Remote Git
+
+```cmd id="final1"
+:: STEP 1 - Go to project folder
+cd Desktop
+cd "06-Week 6"
+cd "Git-HOL "
+
+:: STEP 2 - Check current status (clean state)
+git status
+
+:: STEP 3 - List all branches
+git branch
+
+:: STEP 4 - Switch to main branch
+git checkout main
+
+:: STEP 5 - Pull latest changes from remote
+git pull origin main
+
+:: STEP 6 - Add all changes
+git add .
+
+:: STEP 7 - Commit changes
+git commit -m "Cleanup and push changes"
+
+:: STEP 8 - Push to remote repository
+git push origin main
+
+:: STEP 9 - Verify status
+git status
+
+:: STEP 10 - Check commit history
+git log --oneline --graph --decorate
+```
