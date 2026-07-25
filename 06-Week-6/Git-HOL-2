@@ -1,0 +1,94 @@
+
+
+## Complete Commands (CMD)
+
+```bash id="3l0k2m"
+:: STEP 1 - Go to your project folder
+cd Desktop
+cd "06-Week 6"
+cd "Git-HOL -1"
+
+:: STEP 2 - Check current repo status
+git status
+
+:: STEP 3 - Create a .log file
+type nul > error.log
+
+:: STEP 4 - Create log folder
+mkdir log
+
+:: STEP 5 - Create file inside log folder
+type nul > log\sample.txt
+
+:: STEP 6 - Verify files are visible (untracked)
+git status
+
+:: STEP 7 - Create .gitignore file
+type nul > .gitignore
+
+:: STEP 8 - Open .gitignore
+notepad .gitignore
+
+:: STEP 9 - Add this content and save
+```
+
+```
+*.log
+log/
+```
+
+```bash id="7l1k9q"
+:: STEP 10 - Check status again (files should be ignored)
+git status
+
+:: STEP 11 - If .log or log folder still visible (already tracked), remove from tracking
+git rm --cached error.log
+git rm -r --cached log
+
+:: STEP 12 - Add files (only required ones)
+git add .
+
+:: STEP 13 - Commit changes
+git commit -m "Implemented gitignore to ignore log files and folder"
+
+:: STEP 14 - Push to GitHub
+git push
+```
+
+---
+
+## Final Verification
+
+```bash id="8m2n5p"
+git status
+```
+
+Expected:
+
+* error.log → NOT visible
+* log/ folder → NOT visible
+
+---
+
+## Files that SHOULD be in GitHub
+
+```
+welcome.txt
+week6.txt
+.gitignore
+```
+
+---
+
+## Files that SHOULD NOT be in GitHub
+
+```
+error.log
+log/
+```
+
+---
+
+## Outcome
+
+.gitignore successfully implemented and unwanted files/folders ignored during commit and push.
