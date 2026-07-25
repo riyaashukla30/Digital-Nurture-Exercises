@@ -1,0 +1,113 @@
+
+
+## Complete Git Workflow (CMD)
+
+```bash
+:: STEP 1 - Go to Desktop
+cd Desktop
+
+:: STEP 2 - Create Folder Structure
+mkdir "06-Week 6"
+cd "06-Week 6"
+mkdir "Git-HOL -1"
+cd "Git-HOL -1"
+
+:: STEP 3 - Initialize Git Repository
+git init
+
+:: STEP 4 - Check Initial Status
+git status
+
+:: STEP 5 - Create Files
+type nul > welcome.txt
+type nul > week6.txt
+
+:: STEP 6 - Open File and Add Content
+notepad welcome.txt
+
+:: STEP 7 - Check Status (Untracked Files)
+git status
+
+:: STEP 8 - Add Files to Staging Area
+git add .
+
+:: STEP 9 - Verify Staging
+git status
+
+:: STEP 10 - Commit Files
+git commit -m "Week 6 Git HOL completed"
+
+:: STEP 11 - View Commit History
+git log
+
+:: STEP 12 - Remove Old Remote (if exists)
+git remote remove origin
+
+:: STEP 13 - Add Remote Repository
+git remote add origin https://github.com/riyaashukla30/Digital-Nurture-Exercises.git
+
+:: STEP 14 - Verify Remote
+git remote -v
+
+:: STEP 15 - Pull Existing Data from GitHub
+git pull origin main --rebase
+
+:: STEP 16 - Rename Branch to Main
+git branch -M main
+
+:: STEP 17 - Push Code to GitHub
+git push -u origin main
+```
+
+---
+
+## Content Added in `welcome.txt`
+
+```
+Hello Git
+This is my Week 6 assignment
+```
+
+---
+
+## Final Folder Structure
+
+```
+06-Week 6/
+ └── Git-HOL -1/
+      ├── welcome.txt
+      └── week6.txt
+```
+
+---
+
+## Error Handling Commands
+
+```bash
+:: If push rejected
+git pull origin main --rebase
+git push
+
+:: If conflict occurs
+git add .
+git rebase --continue
+git push
+
+:: If remote already exists
+git remote remove origin
+git remote add origin https://github.com/riyaashukla30/Digital-Nurture-Exercises.git
+```
+
+---
+
+## Outcome
+
+* Repository initialized successfully
+* Files created and tracked
+* Changes committed
+* Remote repository connected
+* Code pushed to GitHub
+
+---
+
+
