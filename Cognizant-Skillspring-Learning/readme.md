@@ -15,7 +15,7 @@ This folder includes the courses I’m currently learning on Cognizant Skillspri
 To build strong basics in AI, React, and software development.
 
 ## 📌 Status
-Currently learning — certification in progress.
+Completed
 
 ---
 Each course has its own file with notes and key learnings.
